@@ -2,6 +2,7 @@ package com.example.grottes;
 
 import com.example.grottes.scene.Cave;
 import com.example.grottes.schedule.DropScheduler;
+import com.example.grottes.schedule.EventScheduler;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
@@ -9,12 +10,11 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Timer;
 
-public class HelloApplication extends Application {
+public class ConcretionApplication extends Application {
     public static Map<String, Timer> tasks = new HashMap<>();
     public static Pane root = new Pane();
 
@@ -39,7 +39,9 @@ public class HelloApplication extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
         tasks.put("drop_generation", DropScheduler.scheduleDropGeneration());
+        tasks.put("event",           EventScheduler.FistulousEvent());
     }
+
     public static void main(String[] args) {
         launch(args);
     }

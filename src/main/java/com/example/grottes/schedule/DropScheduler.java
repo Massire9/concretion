@@ -21,7 +21,7 @@ public class DropScheduler {
         };
 
         Timer taskManager = new Timer();
-        taskManager.scheduleAtFixedRate(task, 0, 1000);
+        taskManager.scheduleAtFixedRate(task, 0, 3000);
 
         return taskManager;
     }
